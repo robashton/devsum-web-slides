@@ -145,21 +145,42 @@
             <li>Plain ol' HTML</li>
             <li>Retained mode graphics</li>
             <li>High level... I guess</li>
+            <li>Highly optimised(!!)</li>
           </ul>
         </div>
         
-        <div class="step code" data-x="14000" data-y="0">
-          <h2>A basic projection matrix</h2>
-          <p>Used to project coordinates into screen space</p>
-          <pre>
-var projection = mat4.create();
+        <div class="step code" data-x="2000" data-y="1500">
+          <h2>Given a container like this</h2>
+          <pre class="demo" data-src="html-example-1">
+          </pre>
+        </div>    
 
-// Field of view is 45 degrees
-// Aspect ratio is 4:3
-// Clamp viewing distance from 1.0 to 100
-mat4.perspective(45, 4/3, 1, 100, projection);
-          </pre>   
-        </div>         
+        <div class="step code" data-x="3000" data-y="1500">
+          <h2>And some code like this</h2>
+          <pre class="demo" data-src="html-example-1-src">
+          </pre>
+        </div>  
+
+        <div class="step slide" data-x="4000" data-y="1500">
+          <h2>We can have something like this</h2>
+          <div id="html-example-1">  
+            <div id="html-example-1-target" width="640" height="480">
+            </div>
+          </div>
+          <script type="text/javascript" id="html-example-1-src">
+            var target = document.getElementById('html-example-1-target');
+            
+            var sprite = document.createElement('div');
+            sprite.width = 100;
+            sprite.height = 100;
+            sprite.top = 10;
+            sprite.left = 10;
+            target.appendChild(sprite);
+
+          </script>
+        </div>       
+
+
         
         <div class="step slide" data-x="15000" data-y="0">
           <h1>Quick maths lesson</h1>
