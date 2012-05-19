@@ -115,7 +115,7 @@
         </div>
 
         <div class="step slide" data-x="15000" data-y="0">
-          <h1 class="top">Pros</h1>
+          <h1 class="top">Happy face</h1>
           <ul>
             <li>Runs nearly everywhere</li>
             <li>Simple to use</li>
@@ -124,7 +124,7 @@
         </div>
 
         <div class="step slide" data-x="16000" data-y="0">
-          <h1 class="top">Cons</h1>
+          <h1 class="top">Sad face</h1>
           <ul>
             <li>Poor hardware acceleration support</li>
             <li>It's slooooooooow (except in IE)</li>
@@ -132,30 +132,20 @@
             <li>Struggles at higher resolutions</li>
           </ul>
         </div>
+
+        <!-- TODO: Maybe go off and do some performance related demos -->
         
-        <div class="step code" data-x="12000" data-y="0">
-          <h2>A basic world matrix</h2>
-          <p>Used to transform coordinates from 'model space' into 'world space'</p>
-          <pre>
-var world = mat4.create();
-mat4.identity(world); // Set to identity
-mat4.translate(world, [0, 0, -10]); // Translate back 10 units
-mat4.rotate(world, Math.PI/2, [0, 1, 0]); // Rotate 90 degrees around the Y axis
-mat4.scale(world, [2, 2, 2]); // Scale by 200%
-          </pre>   
+        <div class="step slide" data-x="0" data-y="1500">
+          <h1>HTML+CSS</h1> 
         </div>
         
-         <div class="step code" data-x="13000" data-y="0">
-          <h2>A basic view matrix</h2>
-          <p>Used to transform coordinates from 'world space' into 'camera space'</p>
-          <pre>
-var view = mat4.create();
-
-// Look at 0,0,0
-// From 0,0,-100
-// 'Up' is the Y axis
-mat4.lookAt([0, 0, 0], [0, 0, -100], [0, 1, 0], view);
-          </pre>   
+         <div class="step slide" data-x="1000" data-y="1500">
+          <h1 class="top">HTML+CSS</h1>
+          <ul>
+            <li>Plain ol' HTML</li>
+            <li>Retained mode graphics</li>
+            <li>High level... I guess</li>
+          </ul>
         </div>
         
         <div class="step code" data-x="14000" data-y="0">
