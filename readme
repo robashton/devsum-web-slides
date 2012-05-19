@@ -1,4 +1,4 @@
-Repo for my devsum talk on web-based gaming
+Repo for my devsum talk on web-based gamings
 
 Ideas
 ------
@@ -17,6 +17,7 @@ Some reasons we might want to hit up the web tech
   - Easy way to get to market
   - Can support all the devices with minimal re-work
   - It's fun and direct
+  - Can make money with no middle men!!!!
 
 Anyway, what are our options?
 --------
@@ -59,9 +60,26 @@ Canvas
     - A scene with high quality images at 1024x768
       - Render at 640x480 and scale up
 
+HTML5 + CSS
+    - CSS Sprites/Transforms
+    - Same demo as in the first one
+        - Laptop
+        - iPad
+        - Mobile phone
+    - Run this so everybody can participate
+
+- Pros
+    - Runs pretty much everywhere
+    - Performance is generally amazing
+    - Not a lot to learn to use this
+
+- Cons
+    - Can be a bit tricky to coax into desired behaviour
+    - Not as flexible as 'just drawing stuff' 
+    - It's not what it was designed to do, you WILL encounter oddities!
 
 WebGL
-
+    - What is it? (Khronos, participants etc)
     - The 15 simple steps to draw a triangle on the screen
 
 - Pros
@@ -72,22 +90,22 @@ WebGL
 - Cons
     - Steep learning curve (low level)
     - Not supported universally
-      - No iOS yet :-()
+      - No iOS yet :-(
       - No IE :-(
- 
-Choosing your tech
--------
 
-What kind of game do you want to build?
-What platforms do you want to deploy to first?
-Platforms will dictate your limitations, and features will restrict your platforms.
+- Examples
+    - Particles
+    - Hoverbattles
 
-What about the server?
--------
+- Ah yes, networking
+  - Let's build a canvas multiplay demo together
+  - Create a node server, bring in socket.io
+  - Create a scene, ability to add new entities, and remove them
+  - New connections mean adding a square, your square is blue
+  - Moving your square around with arrow keys results in everybody elses screens updating
 
-Single player? 
-  - Static files, heroku - freeeeeeee!
-  - Standard web server for posting values to (high scores)
+Note that in this demo, there was no shared code - so why NodeJS?
+  - No reason at all, other than it's cool and I like the lack of context switching
 
 Multi player?
   - Do you want to share code?
@@ -100,4 +118,10 @@ Multi player?
        - Sharing code? Well... JavaScript?
        - NodeJS!
 
+ 
+Choosing your tech
+-------
 
+What kind of game do you want to build?
+What platforms do you want to deploy to first?
+Platforms will define your feature limitations, and features will limit your platform choices.
