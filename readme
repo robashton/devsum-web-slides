@@ -93,9 +93,16 @@ WebGL
       - No iOS yet :-(
       - No IE :-(
 
+- Examples in each platform
+  - A simple black square
+  - A simple square with an image
+  - Bouncing the square around
+  - Particles
+  - 3D (spin the square)
+
 - Examples
-    - Particles
     - Hoverbattles
+    - Maybe show off 'hackspace'
 
 - Ah yes, networking
   - Let's build a canvas multiplay demo together

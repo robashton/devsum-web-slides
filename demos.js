@@ -5,4 +5,6 @@ $(document).ready(function() {
   	var srcele = $('#' + srcid);
   	ele.text(srcele.html());
   });
+
+  htmlexample();
 });

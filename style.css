@@ -224,6 +224,11 @@ q {
     letter-spacing: -1px;
 }
 
+.game {
+  position: absolute;
+}
 
-
+.game div {
+  position: relative;
+}
 
