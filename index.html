@@ -469,7 +469,7 @@ gl.enableVertexAttribArray(aVertexPosition);
           </pre>       
         </div>s
                
-        <div class="step" data-x="23000" data-rotate-y="180" data-y="4500">
+        <div class="step" id="webXgl-squares" data-x="23000" data-rotate-y="180" data-y="4500">
           <canvas width="640" height="480" id="square-webgl">
         
           </canvas>
@@ -512,11 +512,11 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
 
-        <div class="step slide" data-x="0" data-y="6000">
+        <div class="step slide" data-x="0" data-y="7500">
           <h1>So here we are</h1>
         </div>
 
-        <div class="step slide" data-x="1000" data-y="6000">
+        <div class="step slide" data-x="1000" data-y="7500">
           <h1>Use Canvas when...</h1>
           <ul>
             <li>You're building for fast machines</li>
@@ -525,7 +525,7 @@ gl.enableVertexAttribArray(aVertexPosition);
           </ul>
         </div>
 
-        <div class="step slide" data-x="2000" data-y="6000">
+        <div class="step slide" data-x="2000" data-y="7500">
           <h1>Use the DOM when...</h1>
           <ul>
             <li>You *really* want mobile support</li>
@@ -534,7 +534,7 @@ gl.enableVertexAttribArray(aVertexPosition);
           </ul>
         </div>
         
-        <div class="step slide" data-x="3000" data-y="6000">
+        <div class="step slide" data-x="3000" data-y="7500">
           <h1>Use WebGL when...</h1>
           <ul>
             <li>You don't care about IE</li>
@@ -543,7 +543,7 @@ gl.enableVertexAttribArray(aVertexPosition);
           </ul>
         </div>
 
-        <div class="step slide" data-x="4000" data-y="6000">
+        <div class="step slide" data-x="4000" data-y="7500">
           <h1>Use native when...</h1>
           <ul>
             <li>You want the best performance</li>
@@ -552,7 +552,7 @@ gl.enableVertexAttribArray(aVertexPosition);
           </ul>
         </div>
 
-        <div class="step slide" data-x="5000" data-y="6000">
+        <div class="step slide" data-x="5000" data-y="7500">
           <h1>So what have we learned?</h1>
           <ul>
             <li>We have a lot of choices</li>
@@ -582,9 +582,7 @@ gl.enableVertexAttribArray(aVertexPosition);
     <script src="glmatrix.js"></script>
     <script src="impress.js"></script>
     <script src="demos.js"></script>
-    <script src="demos/basicwebgl.js"></script>
-    <script src="demos/triangles.js"></script>
-    <script src="demos/particles.js"></script>
+    <script src="squares.js"></script>
     
     <div id="triangles-vertex" style="display: none;">attribute vec3 aVertexPosition;
 uniform mat4 uProjection;
@@ -599,7 +597,7 @@ void main(void){
 precision highp float;
 #endif
 void main(void) {
-  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }</div>
    
   </body>
