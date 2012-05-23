@@ -1,0 +1,102 @@
+<html>
+  <head>
+  	<script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="glmatrix.js"></script>
+
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+  	  	var target = document.getElementById('target');
+        var gl = target.getContext('experimental-webgl');
+
+        gl.clearColor(1.0, 1.0, 1.0, 1.0);
+  
+        var vertices = [
+           0.0, 0.0, 0.0,
+           1.0, 0.0, 0.0,
+           0.0, 1.0, 0.0,
+           1.0, 1.0, 0.0
+        ];
+        
+        var vertexBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);  
+          
+        var vertexText = document.getElementById('triangles-vertex').innerText;
+        var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+        gl.shaderSource(vertexShader, vertexText);
+        gl.compileShader(vertexShader);
+        
+        var fragmentText = document.getElementById('triangles-fragment').innerText;
+        var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+        gl.shaderSource(fragmentShader, fragmentText);
+        gl.compileShader(fragmentShader);
+            
+        var program = gl.createProgram(); 
+
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+           
+        var aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition');
+        var uProjection = gl.getUniformLocation(program, 'uProjection');
+        var uView = gl.getUniformLocation(program, 'uView');
+        var uWorld = gl.getUniformLocation(program, 'uWorld');
+
+        var projection = mat4.create();
+        var view = mat4.create();
+        var world = mat4.create();
+        
+        mat4.ortho(0, target.width, target.height, 0, -1, 1, projection);
+        mat4.lookAt([0, 0, 0], [0, 0, -1], [0, 1, 0], view);
+        mat4.identity(world);
+        
+        
+        setInterval(function() {
+          gl.viewport(0, 0, target.width, target.height);
+          gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+          
+          gl.useProgram(program);
+          
+          gl.uniformMatrix4fv(uProjection, false, projection);
+          gl.uniformMatrix4fv(uView, false, view);
+          gl.uniformMatrix4fv(uWorld, false, world);
+          
+          gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+          gl.vertexAttribPointer(aVertexPosition, 3, gl.FLOAT, false, 0, 0);
+          gl.enableVertexAttribArray(aVertexPosition);
+          
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          
+          mat4.identity(world);  
+          mat4.translate(world, [100, 100, 0]);
+          mat4.scale(world, [100, 100, 0.5]);
+            
+        }, 30);
+
+  	  });
+  	</script>
+  </head>
+  <body>
+  	<canvas id="target" width="640" height="480">
+  	  Canvas not supported
+  	</canvas>
+
+
+    <div id="triangles-vertex" style="display: none;">attribute vec3 aVertexPosition;
+uniform mat4 uProjection;
+uniform mat4 uView;
+uniform mat4 uWorld;
+
+void main(void){
+  gl_Position =  uProjection * uView * uWorld * vec4(aVertexPosition, 1.0);
+}</div>
+    
+    <div id="triangles-fragment" style="display: none;">#ifdef GL_ES
+precision highp float;
+#endif
+void main(void) {
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+}</div>
+
+  </body>
+</html>
