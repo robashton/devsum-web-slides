@@ -56,7 +56,7 @@
           </ul>
         </div>
 
-        <div class="step slide" data-rotate-y="180" data-x="7000" data-y="0">
+        <div class="step slide" data-rotate-y="180" data-x="6000" data-y="0">
           <h1 class="top">What are our options?</h1>
           <ul>
             <li><strong>WebGL</strong></li>
@@ -68,7 +68,7 @@
           </ul>
         </div>
         
-        <div class="step slide" data-x="8000" data-y="0">
+        <div class="step slide" data-x="6000" data-y="0">
           <h1>HTML5 Canvas</h1>     
         </div>
         
@@ -347,7 +347,7 @@ mat4.perspective(45, 4/3, 1, 100, projection);
           <p>Given a position 'P' on a model, as a vector (x,y,z)</p>
           <ul>
             <li>Multiply by world matrix to get its position in the game world</li>
-            <l`i>Multiply that by the view matrix to get its position relative to camera</li>
+            <li>Multiply that by the view matrix to get its position relative to camera</li>
             <li>Multiply that by projection matrix to get position on screen</li>
           </ul>       
         </div>
@@ -501,23 +501,63 @@ gl.enableVertexAttribArray(aVertexPosition);
           <h1>A note on audio</h1>
         </div>
 
-        <div class="step slide" data-x="1000" data-y="6000">
-          <h1>Support</h1>
-          <ul>
-            <li><strong>IE</strong>: </li>
-            <li><strong>Opera</strong>: </li>
-            <li><strong>Firefox</strong>: </li>
-            <li><strong>Chrome</strong>: </li>
-          </ul>
+        <div class="step code" data-x="1000" data-y="6000">
+          <h1>Audio use</h1>
+          <pre>
+var audio = new Audio();
+audio.url = 'myfile.wav';
+audio.play();
+          </pre>
         </div>
 
+        <div class="step slide" data-x="2000" data-y="6000">
+          <h1 class="top">Audio Support</h1>
+          <table>
+            <thead>
+              <tr>
+                <td>Browser</td><td>OGG</td><td>WAV</td><td>MP3</td><td>AAC</td>
+              </tr>
+            </thead>
+            <tbody>
+                <tr><td>IE</td>         <td></td><td></td><td>X</td><td>X</td></tr>
+                <tr><td>Opera</td>      <td>X</td><td>X</td><td></td><td></td></tr>
+                <tr><td>Firefox</td>    <td>X</td><td>X</td><td></td><td></td></tr>
+                <tr><td>Chrome</td>     <td>X</td><td>X</td><td>X</td><td>X</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="step slide" data-x="2000" data-y="6000">
+          <h1 class="top">Audio Support</h1>
+          <table>
+            <thead>
+              <tr>
+                <td>Browser</td><td>OGG</td><td>WAV</td><td>MP3</td><td>AAC</td>
+              </tr>
+            </thead>
+            <tbody>
+                <tr><td>IE</td>         <td></td><td></td><td>X</td><td></td></tr>
+                <tr><td>Opera</td>      <td>X</td><td></td><td></td><td></td></tr>
+                <tr><td>Firefox</td>    <td>X</td><td></td><td></td><td></td></tr>
+                <tr><td>Chrome</td>     <td>X</td><td></td><td>X</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="step slide" data-x="3000" data-y="6000">
+          <h2>Audio Support</h2>
+          <ul>
+            <li>Kinda sucks really</li>
+            <li>Consider "Buzz" or similar: <strong>github.com/jaysalvat/buzz</strong></li>
+          </ul>          
+        </div>
 
         <div class="step slide" data-x="0" data-y="7500">
           <h1>So here we are</h1>
         </div>
 
         <div class="step slide" data-x="1000" data-y="7500">
-          <h1>Use Canvas when...</h1>
+          <h1 class="top">Use Canvas when...</h1>
           <ul>
             <li>You're building for fast machines</li>
             <li>You can cache the results easily</li>
@@ -526,7 +566,7 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step slide" data-x="2000" data-y="7500">
-          <h1>Use the DOM when...</h1>
+          <h1 class="top">Use the DOM when...</h1>
           <ul>
             <li>You *really* want mobile support</li>
             <li>You're not moving a lot of things</li>
@@ -535,7 +575,7 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
         
         <div class="step slide" data-x="3000" data-y="7500">
-          <h1>Use WebGL when...</h1>
+          <h1 class="top">Use WebGL when...</h1>
           <ul>
             <li>You don't care about IE</li>
             <li>You don't care about iPad</li>
@@ -544,7 +584,7 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step slide" data-x="4000" data-y="7500">
-          <h1>Use native when...</h1>
+          <h1 class="top">Use native when...</h1>
           <ul>
             <li>You want the best performance</li>
             <li>You don't like Javascript</li>
@@ -553,7 +593,7 @@ gl.enableVertexAttribArray(aVertexPosition);
         </div>
 
         <div class="step slide" data-x="5000" data-y="7500">
-          <h1>So what have we learned?</h1>
+          <h1 class="top">So what have we learned?</h1>
           <ul>
             <li>We have a lot of choices</li>
             <li>They all suck a bit</li>

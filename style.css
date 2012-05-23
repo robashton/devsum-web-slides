@@ -232,3 +232,7 @@ q {
   position: relative;
 }
 
+thead td {
+  padding-right: 10px;
+}
+
