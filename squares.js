@@ -43,13 +43,7 @@ $(document).ready(function() {
   
   mat4.ortho(0, canvas.width, canvas.height, 0, -1, 1, projection);
   mat4.lookAt([0, 0, 0], [0, 0, -1], [0, 1, 0], view);
-  mat4.identity(world);
   
-  mat4.scale(world, [canvas.width / 2.0, canvas.height / 2.0, 0.5]);
-  mat4.translate(world, [0.5, 0.5, 0]);
-
-  
-  var rotation = 0;
   setInterval(function() {
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -67,8 +61,8 @@ $(document).ready(function() {
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     
     mat4.identity(world);  
-          mat4.translate(world, [100, 100, 0]);
-          mat4.scale(world, [100, 100, 0.5]);
+    mat4.translate(world, [100, 100, 0]);
+    mat4.scale(world, [100, 100, 0.5]);
       
   }, 30);
 
