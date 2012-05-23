@@ -47,8 +47,7 @@ $(document).ready(function() {
   
   mat4.scale(world, [canvas.width / 2.0, canvas.height / 2.0, 0.5]);
   mat4.translate(world, [0.5, 0.5, 0]);
-  
-  console.log(aVertexPosition, uProjection, uView, uWorld);
+
   
   var rotation = 0;
   setInterval(function() {
@@ -67,13 +66,13 @@ $(document).ready(function() {
     
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     
-    mat4.identity(world);   
-    mat4.scale(world, [canvas.width / 2.0, canvas.height / 2.0, 0.5]);  
+    mat4.identity(world);  
+    mat4.scale(world, [canvas.width / 2.0, canvas.height / 2.0, 0.5]);      
     mat4.translate(world, [0.5, 0.5, 0]);
-    
+
     
     rotation += 0.1;
       
-  }, 1000);
+  }, 30);
 
 });

@@ -1,0 +1,19 @@
+<html>
+  <head>
+  	<script type="text/javascript" src="jquery.js"></script>
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+  	  	var target = document.getElementById('target');
+  	  	var context = target.getContext('2d');
+
+  	  	context.fillStyle = '#000';
+  	  	context.fillRect(0, 0, 100, 100);
+  	  });
+  	</script>
+  </head>
+  <body>
+  	<canvas id="target" width="640" height="480">
+  	  Canvas not supported
+  	</canvas>
+  </body>
+</html>
