@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      #target {
+        position: relative;
+      }
+      #target div {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  	<script type="text/javascript" src="jquery.js"></script>
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+  	  	var target = document.getElementById('target');
+
+        var sprites = [];
+        var particles = [];
+
+        for(var i = 0; i < 10; i++) {
+          particles.push({
+              x: Math.random() * 640,
+              y: Math.random() * 480,
+              xvel: Math.random() * 2.0 - 1.0,
+              yvel: Math.random() * 2.0 - 1.0
+            });
+          
+          var sprite = document.createElement('div');
+          sprite.style.width = 2 + 'px';
+          sprite.style.height = 2 + 'px';
+          sprite.style['background-color'] = '#000';
+          target.appendChild(sprite);
+          sprites.push(sprite);
+        }
+
+        setInterval(function() {
+          for(var i = 0; i < particles.length; i++) {
+            var particle = particles[i];
+            var sprite = sprites[i];
+
+            sprite.style.top = particle.y + 'px';
+            sprite.style.left = particle.x + 'px';
+
+            particle.y += particle.yvel;
+            particle.x += particle.xvel;
+          }
+        }, 1000 / 30);
+
+  	  });
+  	</script>
+  </head>
+  <body>
+  	<div id="target" width="640" height="480">
+
+    </div>
+  </body>
+</html>

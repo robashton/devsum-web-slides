@@ -2,16 +2,18 @@
   <head>
     <style>
       #target {
-        position: absolute;
+        position: relative;
       }
       #target div {
-        position: relative;
+        position: absolute;
+        margin: 0;
+        padding: 0;
       }
     </style>
   	<script type="text/javascript" src="jquery.js"></script>
   	<script type="text/javascript">
   	  $(document).ready(function() {
-  	  	var target = document.getElementById('target');
+        var target = document.getElementById('target');
 
         var sprite = document.createElement('div');
         sprite.style.width = 100 + 'px';
@@ -21,7 +23,24 @@
         sprite.style['background-color'] = '#000';
         target.appendChild(sprite);
 
-  	  });
+        var x = 10;
+        var y = 10;
+
+        setInterval(function() {
+          sprite.style.top = x + 'px';
+          sprite.style.left = y + 'px';
+          x += 5;
+          y += 5;
+
+        }, 1000 / 20);
+     
+      
+      /*
+        sprite.style['-webkit-transform'] = 'translate3d(0,0,0)';
+        sprite.style['-webkit-transition'] = '5.0s linear';
+        sprite.style['-webkit-transform'] = 'translate3d(500px, 500px,0px)';
+      */
+      });
   	</script>
   </head>
   <body>
